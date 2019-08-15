@@ -1,7 +1,16 @@
 language: dart
+
+stages:
+  format:
+  analyze:
+  test:
+
 os:
 - linux
 - osx
 - windows
+
 dart_task:
 - dartanalyze
+- test: --platform vm
+- test: --platform chrome

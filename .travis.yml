@@ -12,5 +12,6 @@ os:
 
 dart_task:
 - dartanalyze
+- dartfmt
 - test: --platform vm
 - test: --platform chrome

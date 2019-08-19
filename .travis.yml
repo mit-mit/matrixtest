@@ -1,21 +1,20 @@
 language: dart
 
-stages:
-  format:
-  analyze:
-  test:
-
-os:
-- linux
-- osx
-- windows
-
-dart:
-  dev:
-  stable:
-
-dart_task:
-- dartanalyze
-- dartfmt
-- test: --platform vm
-- test: --platform chrome
+matrix:
+  include:
+    - os: linux
+      dart_task:
+      - test: --platform vm
+      - test: --platform chrome
+    - os: osx
+      dart_task:
+      - test: --platform vm
+      - test: --platform chrome
+    - os: windows
+      dart_task:
+      - test: --platform vm
+      - test: --platform chrome
+    - os: linux
+      dart_task:
+      - dartanalyze
+      - dartfmt
